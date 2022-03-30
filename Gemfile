@@ -53,11 +53,19 @@ gem "bootsnap", require: false
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
+# add mini racer
+gem 'mini_racer'
+
+# add simplecov
+gem 'simplecov', require: false, group: :test
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
   # Use sqlite3 as the database for Active Record
   gem "sqlite3", "~> 1.4"
+  # rspec
+  gem 'rspec-rails', '~> 4.0.1'
 end
 
 group :development do
@@ -73,7 +81,8 @@ end
 
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
-  gem "capybara"
+  gem 'capybara'
   gem "selenium-webdriver"
   gem "webdrivers"
+  gem 'simplecov', require: false
 end
