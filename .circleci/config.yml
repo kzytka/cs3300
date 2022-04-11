@@ -8,7 +8,7 @@ workflows:
   test-env-vars:
     jobs:
       - build:
-          context: my_context_name
+          context: Heroku
 
 jobs:
   build:
