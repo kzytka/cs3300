@@ -12,7 +12,13 @@ class ProjectsController < ApplicationController
 
   # GET /projects/new
   def new
-    @project = Project.new
+    if user_signed_in?
+      @project = Project.new
+    else
+      respond_to do |format|
+        format.html { redirect_to projects_url, notice: "You must be signed in to create a new project" }
+      end
+    end
   end
 
   # GET /projects/1/edit
