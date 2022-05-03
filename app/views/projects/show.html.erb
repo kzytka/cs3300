@@ -4,8 +4,9 @@
   <div class="container">
     <h1 class="display-3">
     <h4>About Me</h4>
-    <%= @user.try(:about_user) %>
-    <%= "-" %><%= @user.try(:name) %>
+    <% user_number = @project.user_id %>
+    <%= User.find_by(id: user_number).try(:about_user) %><br/>
+    <%= "-" %><%= User.find_by(id: user_number).try(:name) %>
     <br/><br/>
 </div>
 <div class="card">

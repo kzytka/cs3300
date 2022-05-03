@@ -19,7 +19,8 @@
       <tr>
         <td><%= project.title %></td>
         <td><%= project.description %></td>
-        <td><%= @user.try(:name) %></td>
+        <% user_number = project.user_id %>
+        <td><%= User.find_by(id: user_number).try(:name) %></td>
         <td><%= link_to "Show this project", project %></td>
       </tr>
     <% end %>
